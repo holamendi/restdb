@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    nio4r (2.5.8)
+    puma (6.0.2)
+      nio4r (~> 2.0)
     rack (3.0.4.1)
     roda (3.64.0)
       rack
@@ -11,9 +14,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  puma
   roda
   sequel
   sqlite3
+
+RUBY VERSION
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.4.1

@@ -1,4 +1,3 @@
-require "roda"
-require_relative "sqlite_rest_api"
+require "./app"
 
-run SqliteRestApi.freeze.app
+run App.freeze.app
