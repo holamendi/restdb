@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rack (3.0.4.1)
+    roda (3.64.0)
+      rack
+    sequel (5.65.0)
+    sqlite3 (1.6.0-x86_64-linux)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  roda
+  sequel
+  sqlite3
+
+BUNDLED WITH
+   2.4.1
