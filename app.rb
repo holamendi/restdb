@@ -1,9 +1,5 @@
 require "roda"
 require "sequel"
-require "debug"
-
-DB = Sequel.connect(ENV.fetch("DATABASE_URL"), readonly: true)
-DB.extension(:pagination)
 
 class App < Roda
   plugin :environments
@@ -13,6 +9,9 @@ class App < Roda
   configure :development, :production do
     plugin :enhanced_logger
   end
+
+  DB = test? ? Sequel.sqlite : Sequel.connect(ENV["DATABASE_URL"], readonly: true)
+  DB.extension(:pagination)
 
   route do |r|
     r.root { view :index }
@@ -34,14 +33,14 @@ class App < Roda
 
           if page.to_i <= 0
             response.status = 400
-            return {error: "the 'page' parameter must be greater than 0"}
+            return {error: "the 'page' parameter must be a number greater than 0"}
           end
 
           page_size = params.delete(:page_size) || 200
 
-          if !page_size.to_i.between?(10, 200)
+          unless page_size.to_i.between?(10, 200)
             response.status = 400
-            return {error: "the 'page_size' parameter must be between 10 and 200"}
+            return {error: "the 'page_size' parameter must be a number between 10 and 200"}
           end
 
           invalid_filters = params.keys - DB[table].columns
