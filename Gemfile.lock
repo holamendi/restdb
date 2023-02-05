@@ -2,13 +2,21 @@ GEM
   remote: https://rubygems.org/
   specs:
     nio4r (2.5.8)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
     puma (6.0.2)
       nio4r (~> 2.0)
     rack (3.0.4.1)
     roda (3.64.0)
       rack
+    roda-enhanced_logger (0.5.0)
+      roda (>= 3.19.0)
+      tty-logger (>= 0.3, < 1.0)
     sequel (5.65.0)
     sqlite3 (1.6.0-x86_64-linux)
+    tty-color (0.6.0)
+    tty-logger (0.6.0)
+      pastel (~> 0.8)
 
 PLATFORMS
   x86_64-linux
@@ -16,6 +24,7 @@ PLATFORMS
 DEPENDENCIES
   puma
   roda
+  roda-enhanced_logger
   sequel
   sqlite3
 
