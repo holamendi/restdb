@@ -14,7 +14,7 @@ class App < Roda
   DB.extension(:pagination)
 
   route do |r|
-    r.root { view :index }
+    r.root { "Look behind you, a three headed monkey!" }
 
     r.on :api do
       r.on String do |resource|
