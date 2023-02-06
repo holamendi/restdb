@@ -15,6 +15,7 @@ GEM
     nio4r (2.5.8)
     pastel (0.8.0)
       tty-color (~> 0.5)
+    pg (1.4.5)
     puma (6.0.2)
       nio4r (~> 2.0)
     rack (3.0.4.1)
@@ -33,6 +34,7 @@ GEM
     roda-enhanced_logger (0.5.0)
       roda (>= 3.19.0)
       tty-logger (>= 0.3, < 1.0)
+    roda-symbolized_params (0.0.2)
     sequel (5.65.0)
     sqlite3 (1.6.0-x86_64-linux)
     tilt (2.0.11)
@@ -46,12 +48,14 @@ PLATFORMS
 DEPENDENCIES
   debug
   minitest
+  pg
   puma
   rack-test
   rake
   rerun
   roda
   roda-enhanced_logger
+  roda-symbolized_params
   sequel
   sqlite3
   tilt
