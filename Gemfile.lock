@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    anyway_config (2.3.1)
+      ruby-next-core (>= 0.14.0)
     debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
@@ -35,7 +37,9 @@ GEM
       roda (>= 3.19.0)
       tty-logger (>= 0.3, < 1.0)
     roda-symbolized_params (0.0.2)
+    ruby-next-core (0.15.3)
     sequel (5.65.0)
+    sqlite3 (1.6.0-arm64-darwin)
     sqlite3 (1.6.0-x86_64-linux)
     tilt (2.0.11)
     tty-color (0.6.0)
@@ -43,9 +47,11 @@ GEM
       pastel (~> 0.8)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
+  anyway_config (~> 2.0)
   debug
   minitest
   pg
